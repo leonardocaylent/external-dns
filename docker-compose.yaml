@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  external-dns:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/external-dns
+    command: ["sh", "-c", "while true; do sleep 3600; done"]
